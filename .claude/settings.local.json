@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(chmod +x /Users/johannes/Desktop/thesis/test_fov_projection.sh)"
+    ]
+  }
+}
