@@ -116,7 +116,7 @@ encode_clip() {
     args+=("$out_file")
 
     local result
-    result=$(timeout $((TEST_DURATION + 15)) ffmpeg "${args[@]}" 2>&1) || true
+    result=$(timeout $((TEST_DURATION + 15)) ffmpeg -nostdin "${args[@]}" 2>&1) || true
     echo "$result" > "$log_file"
 
     if echo "$result" | grep -q "frame="; then
@@ -171,7 +171,7 @@ detect_pixel_format() {
     for fmt in mjpeg yuyv422 nv12; do
         printf "  %-12s @ $RES  " "$fmt"
         local result
-        result=$(timeout 8 ffmpeg -y \
+        result=$(timeout 8 ffmpeg -nostdin -y \
             -f v4l2 -framerate "$FPS" -video_size "$RES" \
             -input_format "$fmt" \
             -i "$CAMERA_DEVICE" \
@@ -228,7 +228,7 @@ test_all_resolutions() {
     for res in "${stereo_resolutions[@]}"; do
         printf "  %-14s " "$res"
         local result
-        result=$(timeout 12 ffmpeg -y \
+        result=$(timeout 12 ffmpeg -nostdin -y \
             -f v4l2 -framerate "$FPS" -video_size "$res" \
             -input_format "$PIXEL_FMT" \
             -i "$CAMERA_DEVICE" \
@@ -502,6 +502,45 @@ echo "  3840x1920  3600x1800  3408x1704  3200x1600"
 echo "  3008x1504  2608x1304  2200x1100  ← using this"
 echo ""
 echo "If camera not visible: bash diagnose_camera_linux.sh"
+echo ""
+
+# ---- Quick device sanity check before wasting time ----
+echo "--- Video devices on this machine ---"
+if command -v v4l2-ctl &>/dev/null; then
+    v4l2-ctl --list-devices 2>/dev/null || ls /dev/video* 2>/dev/null
+else
+    ls -1 /dev/video* 2>/dev/null || echo "  No /dev/video* devices found"
+fi
+echo ""
+
+# Check if anything already has the camera open
+if command -v fuser &>/dev/null; then
+    busy=$(fuser "$CAMERA_DEVICE" 2>/dev/null)
+    if [ -n "$busy" ]; then
+        echo "⚠️  WARNING: $CAMERA_DEVICE is currently held by process(es): $busy"
+        echo "   Close any browser tabs with camera access, cheese, guvcview, etc."
+        echo "   Then press Enter to retry, or Ctrl+C to abort."
+        read -r
+    else
+        echo "✅  $CAMERA_DEVICE is not in use by another process"
+    fi
+fi
+
+# Quick open test — the real fix for "Immediate exit requested"
+echo ""
+echo "Testing camera opens correctly (with -nostdin)..."
+_test=$(ffmpeg -nostdin -y -f v4l2 -i "$CAMERA_DEVICE" -t 0.5 -f null - 2>&1) || true
+if echo "$_test" | grep -qiE "immediate exit|error opening|no such file|permission"; then
+    echo "❌  Camera open test failed:"
+    echo "$_test" | grep -iE "immediate|error|permission|no such" | head -3
+    echo ""
+    echo "Possible fixes:"
+    echo "  1. Wrong device — check list above, edit CAMERA_DEVICE at top of script"
+    echo "  2. Device busy — close other apps using the camera"
+    echo "  3. Permission — run: sudo usermod -aG video \$(whoami) && newgrp video"
+    echo ""
+    echo "Press Enter to try anyway, or Ctrl+C to abort."
+fi
 echo ""
 echo "Press Enter to start (A–E), or Ctrl+C to abort..."
 read -r
