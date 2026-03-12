@@ -1,0 +1,39 @@
+ffmpeg version 8.0.1 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Apple clang version 16.0.0 (clang-1600.0.26.6)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/8.0.1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      60.  8.100 / 60.  8.100
+  libavcodec     62. 11.100 / 62. 11.100
+  libavformat    62.  3.100 / 62.  3.100
+  libavdevice    62.  1.100 / 62.  1.100
+  libavfilter    11.  4.100 / 11.  4.100
+  libswscale      9.  1.100 /  9.  1.100
+  libswresample   6.  1.100 /  6.  1.100
+[avfoundation @ 0xab9038000] Stream #0: not enough frames to estimate rate; consider increasing probesize
+Input #0, avfoundation, from '0':
+  Duration: N/A, start: 569383.379070, bitrate: N/A
+  Stream #0:0: Video: rawvideo (UYVY / 0x59565955), uyvy422, 1920x1080, 1000k tbr, 1000k tbn, start 569383.379070
+Stream mapping:
+  Stream #0:0 -> #0:0 (rawvideo (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 0xab81cd180] MB rate (8160000000) > level limit (16711680)
+[libx264 @ 0xab81cd180] using cpu capabilities: ARMv8 NEON DotProd I8MM
+[libx264 @ 0xab81cd180] profile High 4:2:2, level 6.2, 4:2:2, 8-bit
+Output #0, null, to 'pipe:':
+  Metadata:
+    encoder         : Lavf62.3.100
+  Stream #0:0: Video: h264, yuv422p(tv, progressive), 1920x1080, q=2-31, 15000 kb/s, 1000k fps, 1000k tbn
+    Metadata:
+      encoder         : Lavc62.11.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/15000000 buffer size: 0 vbv_delay: N/A
+frame=    3 fps=0.0 q=53.0 size=N/A time=00:00:00.06 bitrate=N/A speed=0.133x elapsed=0:00:00.50    frame=   18 fps= 18 q=27.0 size=N/A time=00:00:00.56 bitrate=N/A speed=0.566x elapsed=0:00:01.00    frame=   48 fps= 24 q=18.0 size=N/A time=00:00:01.56 bitrate=N/A speed=0.781x elapsed=0:00:02.00    frame=   64 fps= 26 q=17.0 size=N/A time=00:00:02.10 bitrate=N/A speed=0.838x elapsed=0:00:02.50    frame=   79 fps= 26 q=17.0 size=N/A time=00:00:02.60 bitrate=N/A speed=0.864x elapsed=0:00:03.01    frame=   94 fps= 27 q=17.0 size=N/A time=00:00:03.10 bitrate=N/A speed=0.883x elapsed=0:00:03.51    frame=  109 fps= 27 q=16.0 size=N/A time=00:00:03.60 bitrate=N/A speed=0.898x elapsed=0:00:04.01    frame=  124 fps= 27 q=15.0 size=N/A time=00:00:04.10 bitrate=N/A speed=0.908x elapsed=0:00:04.51    frame=  139 fps= 28 q=15.0 size=N/A time=00:00:04.60 bitrate=N/A speed=0.918x elapsed=0:00:05.01    frame=  154 fps= 28 q=15.0 size=N/A time=00:00:05.10 bitrate=N/A speed=0.925x elapsed=0:00:05.51    frame=  169 fps= 28 q=16.0 size=N/A time=00:00:05.60 bitrate=N/A speed=0.931x elapsed=0:00:06.01    frame=  184 fps= 28 q=17.0 size=N/A time=00:00:06.10 bitrate=N/A speed=0.936x elapsed=0:00:06.52    frame=  199 fps= 28 q=18.0 size=N/A time=00:00:06.60 bitrate=N/A speed=0.94x elapsed=0:00:07.02    frame=  214 fps= 28 q=18.0 size=N/A time=00:00:07.10 bitrate=N/A speed=0.944x elapsed=0:00:07.52    frame=  229 fps= 29 q=19.0 size=N/A time=00:00:07.60 bitrate=N/A speed=0.947x elapsed=0:00:08.02    frame=  245 fps= 29 q=21.0 size=N/A time=00:00:08.13 bitrate=N/A speed=0.954x elapsed=0:00:08.53    frame=  259 fps= 29 q=19.0 size=N/A time=00:00:08.60 bitrate=N/A speed=0.952x elapsed=0:00:09.03    frame=  275 fps= 29 q=18.0 size=N/A time=00:00:09.13 bitrate=N/A speed=0.958x elapsed=0:00:09.54    [out#0/null @ 0xab92b1080] video:17277KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=  300 fps= 30 q=-1.0 Lsize=N/A time=00:00:09.97 bitrate=N/A speed=0.997x elapsed=0:00:09.99    
+[libx264 @ 0xab81cd180] frame I:2     Avg QP:33.50  size:117465
+[libx264 @ 0xab81cd180] frame P:298   Avg QP:19.47  size: 58581
+[libx264 @ 0xab81cd180] mb I  I16..4: 100.0%  0.0%  0.0%
+[libx264 @ 0xab81cd180] mb P  I16..4:  4.8%  0.0%  0.0%  P16..4: 54.9%  0.0%  0.0%  0.0%  0.0%    skip:40.3%
+[libx264 @ 0xab81cd180] final ratefactor: 20.47
+[libx264 @ 0xab81cd180] coded y,uvDC,uvAC intra: 15.9% 50.7% 8.9% inter: 24.9% 36.1% 5.8%
+[libx264 @ 0xab81cd180] i16 v,h,dc,p: 27% 40% 13% 21%
+[libx264 @ 0xab81cd180] i8c dc,h,v,p: 43% 24% 20% 13%
+[libx264 @ 0xab81cd180] kb/s:14146.70

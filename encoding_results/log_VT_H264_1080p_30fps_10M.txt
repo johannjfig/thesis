@@ -1,0 +1,41 @@
+ffmpeg version 8.0.1 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Apple clang version 16.0.0 (clang-1600.0.26.6)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/8.0.1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      60.  8.100 / 60.  8.100
+  libavcodec     62. 11.100 / 62. 11.100
+  libavformat    62.  3.100 / 62.  3.100
+  libavdevice    62.  1.100 / 62.  1.100
+  libavfilter    11.  4.100 / 11.  4.100
+  libswscale      9.  1.100 /  9.  1.100
+  libswresample   6.  1.100 /  6.  1.100
+[avfoundation @ 0x8a2c1c000] Selected video size (1920x1080) is not supported by the device.
+[avfoundation @ 0x8a2c1c000] Supported modes:
+[avfoundation @ 0x8a2c1c000]   1024x576@[30.000030 30.000030]fps
+[avfoundation @ 0x8a2c1c000]   1024x576@[10.000000 10.000000]fps
+[avfoundation @ 0x8a2c1c000]   1280x720@[30.000030 30.000030]fps
+[avfoundation @ 0x8a2c1c000]   1280x720@[5.000000 5.000000]fps
+[avfoundation @ 0x8a2c1c000]   1600x896@[30.000030 30.000030]fps
+[avfoundation @ 0x8a2c1c000]   1600x896@[3.000000 3.000000]fps
+[avfoundation @ 0x8a2c1c000]   2000x1000@[30.000030 30.000030]fps
+[avfoundation @ 0x8a2c1c000]   2000x1000@[1.000000 1.000000]fps
+[avfoundation @ 0x8a2c1c000]   2200x1100@[30.000030 30.000030]fps
+[avfoundation @ 0x8a2c1c000]   2200x1100@[1.000000 1.000000]fps
+[avfoundation @ 0x8a2c1c000]   2400x1200@[30.000030 30.000030]fps
+[avfoundation @ 0x8a2c1c000]   2400x1200@[1.000000 1.000000]fps
+[avfoundation @ 0x8a2c1c000]   2608x1304@[30.000030 30.000030]fps
+[avfoundation @ 0x8a2c1c000]   2608x1304@[1.000000 1.000000]fps
+[avfoundation @ 0x8a2c1c000]   2800x1400@[30.000030 30.000030]fps
+[avfoundation @ 0x8a2c1c000]   2800x1400@[1.000000 1.000000]fps
+[avfoundation @ 0x8a2c1c000]   3008x1504@[30.000030 30.000030]fps
+[avfoundation @ 0x8a2c1c000]   3008x1504@[1.000000 1.000000]fps
+[avfoundation @ 0x8a2c1c000]   3200x1600@[30.000030 30.000030]fps
+[avfoundation @ 0x8a2c1c000]   3200x1600@[1.000000 1.000000]fps
+[avfoundation @ 0x8a2c1c000]   3408x1704@[30.000030 30.000030]fps
+[avfoundation @ 0x8a2c1c000]   3408x1704@[1.000000 1.000000]fps
+[avfoundation @ 0x8a2c1c000]   3600x1800@[30.000030 30.000030]fps
+[avfoundation @ 0x8a2c1c000]   3600x1800@[1.000000 1.000000]fps
+[avfoundation @ 0x8a2c1c000]   3840x1920@[30.000030 30.000030]fps
+[avfoundation @ 0x8a2c1c000]   3840x1920@[1.000000 1.000000]fps
+[in#0 @ 0x8a3448000] Error opening input: Input/output error
+Error opening input file 1.
+Error opening input files: Input/output error
